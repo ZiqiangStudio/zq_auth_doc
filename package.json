@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "commit": "git-cz",
-    "lint": "eslint docs --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts",
     "typecheck": "vue-tsc",
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
