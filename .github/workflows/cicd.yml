@@ -1,0 +1,53 @@
+name: Aliyun OSS CI/CD
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Code Test
+        run: yarn lint && yarn typecheck
+
+      - name: Build (Generate static files)
+        run: yarn build
+
+      - name: Setup aliyun OSS
+        uses: yizhoumo/setup-ossutil@v1
+        with:
+          endpoint: oss-cn-hangzhou.aliyuncs.com
+          access-key-id: ${{ secrets.ALI_KEY_ID }}
+          access-key-secret: ${{ secrets.ALI_KEY_SECRET }}
+
+      - name: Upload files to OSS
+        run: |
+          ossutil rm -f oss://zq-auth-doc/ -r
+          ossutil cp -rf docs/.vitepress/dist oss://zq-auth-doc/
+          ossutil set-meta oss://zq-auth-doc/ Cache-Control:no-cache --include "*.html" -r
+
+      - name: Refresh CDN
+        uses: visionwx/ali-cdn-refresh@v0.1.1
+        with:
+          accessKeyId: ${{ secrets.ALI_KEY_ID }}
+          accessKeySecret: ${{ secrets.ALI_KEY_SECRET }}
+          type: Directory
+          path: https://docs.cas.ziqiang.net.cn/
