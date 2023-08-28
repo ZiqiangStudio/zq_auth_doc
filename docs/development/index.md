@@ -21,4 +21,4 @@ title: 第三方应用开发指南
 
 - [前端开发](./frontend)
 - [后端开发](./backend)
-- [SDK](../sdk)
+- [SDK](/sdk/)

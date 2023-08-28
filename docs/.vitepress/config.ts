@@ -53,6 +53,7 @@ export default withMermaid(
         {
           text: '开发指南',
           items: [
+            {text: '应用接入', link: '/development/'},
             {text: '前端开发', link: '/development/frontend'},
             {text: '后端开发', link: '/development/backend'},
           ]
@@ -60,6 +61,7 @@ export default withMermaid(
         {
           text: 'SDK',
           items: [
+            {text: 'SDK介绍', link: '/sdk/'},
             {text: 'Python SDK', link: '/sdk/python'},
           ]
         }]
