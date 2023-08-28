@@ -9,7 +9,8 @@
     "typecheck": "vue-tsc",
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
-    "serve": "vitepress serve docs"
+    "serve": "vitepress serve docs",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@vite-pwa/vitepress": "^0.2.0",
@@ -29,6 +30,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.9.0",
+    "husky": "^8.0.3",
     "mermaid": "^10.2.4",
     "prettier": "^2.8.4",
     "typescript": "^4.9.5",
@@ -41,5 +43,11 @@
       "path": "@commitlint/cz-commitlint"
     }
   },
-  "main": "index.js"
+  "main": "index.js",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn lint && yarn typecheck"
+    }
+  }
 }
