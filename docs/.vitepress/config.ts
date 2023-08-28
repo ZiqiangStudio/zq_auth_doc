@@ -7,7 +7,7 @@ import head from "./scripts/head";
 import {
   generateSiteMap,
   generateSitemapJsonUrlLinks,
-  generateTodaySitemapTxtUrlLinks
+  generateTodaySitemapTxtUrlLinks, getSiteUrlLinks
 } from "./scripts/sitemap";
 import themeConfig from "./scripts/theme";
 
@@ -27,6 +27,9 @@ export default withPwa(
       },
       lastUpdated: true,
       themeConfig,
+      transformHtml: (_, id, ctx) => {
+        getSiteUrlLinks(id, ctx);
+      },
       async buildEnd(siteConfig) {
         // 生成sitemap.xml
         await generateSiteMap(siteConfig);
