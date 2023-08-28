@@ -6,6 +6,7 @@ import {
   onScopeDispose,
   ref,
   unref,
+  watch,
   watchEffect
 } from "./chunk-V634PGSD.js";
 import "./chunk-76J2PTFD.js";
@@ -24,14 +25,17 @@ import "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepre
 import "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/styles/components/vp-sponsor.css";
 import VPBadge from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPBadge.vue";
 import Layout from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/Layout.vue";
-import { default as default2 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPHomeHero.vue";
-import { default as default3 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPHomeFeatures.vue";
-import { default as default4 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPHomeSponsors.vue";
-import { default as default5 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPDocAsideSponsors.vue";
-import { default as default6 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPTeamPage.vue";
-import { default as default7 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageTitle.vue";
-import { default as default8 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageSection.vue";
-import { default as default9 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPTeamMembers.vue";
+import { default as default2 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPImage.vue";
+import { default as default3 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPButton.vue";
+import { default as default4 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPHomeHero.vue";
+import { default as default5 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPHomeFeatures.vue";
+import { default as default6 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPHomeSponsors.vue";
+import { default as default7 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPDocAsideSponsors.vue";
+import { default as default8 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPSponsors.vue";
+import { default as default9 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPTeamPage.vue";
+import { default as default10 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageTitle.vue";
+import { default as default11 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageSection.vue";
+import { default as default12 } from "C:/Users/co/Documents/Work/Ziqiang/repo/zq_auth_doc/node_modules/vitepress/dist/client/theme-default/components/VPTeamMembers.vue";
 
 // node_modules/@vueuse/shared/index.mjs
 function tryOnScopeDispose(fn) {
@@ -245,10 +249,15 @@ function useSidebar() {
   const { frontmatter, page, theme: theme2 } = useData();
   const is960 = useMediaQuery("(min-width: 960px)");
   const isOpen = ref(false);
-  const sidebar = computed(() => {
+  const _sidebar = computed(() => {
     const sidebarConfig = theme2.value.sidebar;
     const relativePath = page.value.relativePath;
     return sidebarConfig ? getSidebar(sidebarConfig, relativePath) : [];
+  });
+  const sidebar = ref(_sidebar.value);
+  watch(_sidebar, (next, prev) => {
+    if (JSON.stringify(next) !== JSON.stringify(prev))
+      sidebar.value = _sidebar.value;
   });
   const hasSidebar = computed(() => {
     return frontmatter.value.sidebar !== false && sidebar.value.length > 0 && frontmatter.value.layout !== "home";
@@ -307,14 +316,17 @@ var theme = {
 };
 var without_fonts_default = theme;
 export {
-  default5 as VPDocAsideSponsors,
-  default3 as VPHomeFeatures,
-  default2 as VPHomeHero,
-  default4 as VPHomeSponsors,
-  default9 as VPTeamMembers,
-  default6 as VPTeamPage,
-  default8 as VPTeamPageSection,
-  default7 as VPTeamPageTitle,
+  default3 as VPButton,
+  default7 as VPDocAsideSponsors,
+  default5 as VPHomeFeatures,
+  default4 as VPHomeHero,
+  default6 as VPHomeSponsors,
+  default2 as VPImage,
+  default8 as VPSponsors,
+  default12 as VPTeamMembers,
+  default9 as VPTeamPage,
+  default11 as VPTeamPageSection,
+  default10 as VPTeamPageTitle,
   without_fonts_default as default,
   useSidebar
 };

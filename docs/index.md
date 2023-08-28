@@ -6,7 +6,7 @@ hero:
   text: 统一认证服务
   tagline: 便捷  迅速  安全
   image:
-    src: /icon/zq-logo.svg
+    src: /images/zq-logo.svg
     alt: 自强 logo
   actions:
     - theme: brand
