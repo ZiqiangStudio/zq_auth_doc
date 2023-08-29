@@ -1,0 +1,49 @@
+name: 申请接入
+description: 用于第三方应用申请接入自强 Auth 统一认证服务
+title: "[Apply] "
+labels:
+  - apply
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请按照下面的模板填写申请信息，我们会尽快处理。
+  - type: input
+    id: app_name
+    attributes:
+      label: 应用名称
+      description: 应用名称
+      placeholder: 示例：自强 Auth
+    validations:
+      required: true
+  - type: input
+    id: app_identifier
+    attributes:
+      label: 应用英文标识
+      description: 应用标识符，用于区分不同的应用
+      placeholder: 示例：zq-auth，用 - 分隔
+    validations:
+      required: true
+  - type: textarea
+    id: app_description
+    attributes:
+      label: 应用描述
+      description: 应用描述功能介绍
+      placeholder: 功能介绍（中文）
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: 联系方式
+      description: 负责人联系方式
+      placeholder: 示例：QQ xxxxxx
+    validations:
+      required: true
+  - type: textarea
+    id: other
+    attributes:
+      label: 其他
+      description: 其他
+    validations:
+      required: false

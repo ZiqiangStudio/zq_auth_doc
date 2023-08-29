@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 自强 Auth 讨论
+    url: https://github.com/ZiqiangStudio/zq_auth_doc/discussions
+    about: 您可以在这里进行讨论
+  - name: 自强 Auth 文档
+    url: https://docs.cas.ziqiang.net.cn/
+    about: 自强 Auth 使用文档

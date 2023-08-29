@@ -1,0 +1,66 @@
+name: Bug 反馈
+description: 用于子应用反馈自强 Auth 的 Bug
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请按照下面的模板填写反馈信息，我们会尽快处理。
+  - type: input
+    id: app_identifier
+    attributes:
+      label: 应用英文标识
+      placeholder: 可选填写
+    validations:
+      required: false
+  - type: dropdown
+    id: module
+    attributes:
+      label: 所属模块
+      options:
+        - 自强 Auth 前端
+        - 自强 Auth 后端
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: Bug 描述
+      description: Bug 描述
+      placeholder: Bug 描述
+    validations:
+      required: true
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: 复现步骤
+      description: 复现步骤
+      placeholder: 复现步骤
+    validations:
+      required: false
+  - type: textarea
+    id: expected_result
+    attributes:
+      label: 期望结果
+      description: 期望结果
+      placeholder: 期望结果
+    validations:
+      required: false
+  - type: textarea
+    id: actual_result
+    attributes:
+      label: 实际结果
+      description: 实际结果
+      placeholder: 实际结果
+    validations:
+      required: false
+  - type: textarea
+    id: other
+    attributes:
+      label: 其他
+      description: 其他
+    validations:
+      required: false

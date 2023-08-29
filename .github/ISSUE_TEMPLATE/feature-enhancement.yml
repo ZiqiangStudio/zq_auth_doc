@@ -1,0 +1,23 @@
+name: 功能建议
+description: 用于子应用向自强 Auth 提出功能建议
+labels:
+  - enhancement
+body:
+  - type: dropdown
+    id: module
+    attributes:
+      label: 所属模块
+      options:
+        - 自强 Auth 前端
+        - 自强 Auth 后端
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 功能建议
+      description: 功能建议
+      placeholder: 描述您的功能建议
+    validations:
+      required: true
