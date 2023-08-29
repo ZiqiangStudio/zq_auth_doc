@@ -14,7 +14,7 @@ hero:
       link: /introduction
     - theme: alt
       text: 申请接入
-      link: mailto:1114738346@qq.com?subject=%E8%87%AA%E5%BC%BAAuth%E7%94%B3%E8%AF%B7%E6%8E%A5%E5%85%A5&body=%E8%B4%9F%E8%B4%A3%E4%BA%BA%E5%A7%93%E5%90%8D%EF%BC%9A%0A%E6%89%8B%E6%9C%BA%E5%8F%B7%EF%BC%9A%0AQQ%EF%BC%9A%0A%0AAPP%E4%B8%AD%E6%96%87%E5%90%8D%E7%A7%B0%EF%BC%9A%0A%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D%EF%BC%9A
+      link: https://github.com/ZiqiangStudio/zq_auth_doc/issues/new?assignees=Nagico&labels=apply&projects=ZiqiangStudio%2F4&template=access-request.yml&title=%5BApply%5D+
     - theme: alt
       text: 在 ApiPost 查看
       link: https://console-docs.apipost.cn/preview/aa7462561f5a5202/d7b7f62f186a37d9
