@@ -3,6 +3,8 @@ description: 用于第三方应用申请接入自强 Auth 统一认证服务
 title: "[Apply] "
 labels:
   - apply
+projects:
+  - ZiqiangStudio/4
 body:
   - type: markdown
     attributes:

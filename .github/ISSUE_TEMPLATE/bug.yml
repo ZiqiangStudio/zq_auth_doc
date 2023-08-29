@@ -3,6 +3,8 @@ description: 用于子应用反馈自强 Auth 的 Bug
 title: "[Bug] "
 labels:
   - bug
+projects:
+  - ZiqiangStudio/4
 body:
   - type: markdown
     attributes:
