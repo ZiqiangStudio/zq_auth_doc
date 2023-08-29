@@ -1,0 +1,22 @@
+name: Rebuild DocSearch Index
+
+on:
+  workflow_dispatch:
+
+jobs:
+  rebuild-index:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Rebuild DocSearch Index
+        run: |
+          chmod +x ./rebuild-index.py
+          ./rebuild-index.py
+        env:
+          CRAWLER_USER_ID: ${{ secrets.CRAWLER_USER_ID }}
+          CRAWLER_API_KEY: ${{ secrets.CRAWLER_API_KEY }}
+          CRAWLER_ID: ${{ secrets.CRAWLER_ID }}
