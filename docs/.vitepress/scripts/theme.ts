@@ -1,6 +1,7 @@
 import {DefaultTheme} from "vitepress";
 import nav from "./sidebar";
-import {github} from "./meta";
+import {github} from "./meta"
+import algolia from "./algolia"
 
 const themeConfig: DefaultTheme.Config = {
   lastUpdatedText: '上次更新于',
@@ -19,6 +20,10 @@ const themeConfig: DefaultTheme.Config = {
     {icon: 'github', link: github}
   ],
   nav,
+  search: {
+    provider: 'algolia',
+    options: algolia
+  }
 }
 
 export default themeConfig
